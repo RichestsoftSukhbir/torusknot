@@ -63,6 +63,7 @@ scene.add(torKnot, floor);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.target.copy(torKnot.position);
+controls.enableDamping = true;
 controls.update();
 
 function animate() {
