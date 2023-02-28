@@ -48,19 +48,14 @@ const floorGeo = new THREE.BoxGeometry(2000, 0.1, 2000);
 const floorMat = new THREE.MeshStandardMaterial({
   color: 0x808080,
   emissive: 0x000000,
-  roughness: 0,
-  matelness: 0,
-  antialias: true,
-  reflectivity: 1
+  roughness: 0
 });
 const floor = new THREE.Mesh(floorGeo, floorMat);
 
 const torKnotGeo = new THREE.TorusKnotGeometry(10, 3, 100, 16);
 const torMat = new THREE.MeshStandardMaterial({
   color: 0xFFFFFF,
-  roughness: 0,
-  metalness: 0,
-  antialias: true
+  roughness: 0
 });
 const torKnot = new THREE.Mesh(torKnotGeo, torMat);
 torKnot.position.set(0, 35, 0);
