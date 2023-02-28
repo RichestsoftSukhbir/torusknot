@@ -42,16 +42,18 @@ scene.add(new RectAreaLightHelper(lightGreen));
 const floorGeo = new THREE.BoxGeometry(2000, 0.1, 2000);
 const floorMat = new THREE.MeshStandardMaterial({
   color: 0x808080,
+  emissive: 0x000000,
   roughness: 0,
   matelness: 0,
-  antialias: true
+  antialias: true,
+  reflectivity: 1
 });
 const floor = new THREE.Mesh(floorGeo, floorMat);
 
-const torKnotGeo = new THREE.TorusKnotGeometry(10, 3, 200, 16);
+const torKnotGeo = new THREE.TorusKnotGeometry(10, 3, 300, 20);
 const torMat = new THREE.MeshStandardMaterial({
   color: 0xFFFFFF,
-  roughness: 0.1,
+  roughness: 0,
   metalness: 0,
   antialias: true
 });
