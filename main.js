@@ -6,6 +6,11 @@ import { RectAreaLightHelper } from 'three/addons/helpers/RectAreaLightHelper.js
 import { RectAreaLightUniformsLib } from 'three/addons/lights/RectAreaLightUniformsLib.js';
 
 const scene = new THREE.Scene();
+
+let cameraZ = -50;
+if(window.innerWidth <= 767) {
+  cameraZ = -80;
+}
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer({antialias: true});
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -13,7 +18,7 @@ renderer.setPixelRatio(window.devicePixelRatio);
 
 RectAreaLightUniformsLib.init();
 
-camera.position.set(0, 35, -80);
+camera.position.set(0, 35, cameraZ);
 
 document.body.appendChild(renderer.domElement);
 
@@ -50,7 +55,7 @@ const floorMat = new THREE.MeshStandardMaterial({
 });
 const floor = new THREE.Mesh(floorGeo, floorMat);
 
-const torKnotGeo = new THREE.TorusKnotGeometry(10, 3, 300, 20);
+const torKnotGeo = new THREE.TorusKnotGeometry(10, 3, 100, 16);
 const torMat = new THREE.MeshStandardMaterial({
   color: 0xFFFFFF,
   roughness: 0,
