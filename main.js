@@ -13,7 +13,7 @@ renderer.setPixelRatio(window.devicePixelRatio);
 
 RectAreaLightUniformsLib.init();
 
-camera.position.set(0, 35, -70);
+camera.position.set(0, 35, -80);
 
 document.body.appendChild(renderer.domElement);
 
